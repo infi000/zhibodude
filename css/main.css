@@ -180,9 +180,6 @@ a.static-nav-link {
     margin-bottom: 0;
     border-radius: 0;
 }
-.ins-live-box-item .thumbnail:hover{
-         /*box-shadow: 4px 4px 15px #888; */
-}
 .ins-live-box p {
     word-wrap: break-word;
 }
