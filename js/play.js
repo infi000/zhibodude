@@ -16,14 +16,9 @@ index.callback_play = function(msg) {
         if (title == data.title) {
             liveURL = data.url[0];
             liveURL = liveURL.replace(" ", "");
-            // console.log(liveURL);
-            // index.playChannels={
-            //     "默认":liveURL
-            // };
             index.playChannels['默认'] = liveURL;
             var obj = '<li class="list-group-item"><a class="btn btn-default active" dataUrl="' + liveURL + '" >默认</a></li>';;
             $(".chooseLine").find("ul").append(obj);
-            // console.log(1);
             var flashvars = {
                 f: '../lib/m3u8/m3u8.swf',
                 a: liveURL,
@@ -39,17 +34,12 @@ index.callback_play = function(msg) {
             };
             var video = [liveURL];
             CKobject.embed('../lib/ckplayer/ckplayer.swf', 'a1', 'ckplayer_a1', '100%', '100%', false, flashvars, video, params);
-            // console.log(flashvars);
             return;
         }
     };
 
 };
-var test;
 index.callback_line = function(msg) {
-    test = msg;
-    console.log(msg);
-    // console.log(index.date())
     var data = msg[today()];
     for (var key in data) {
         if (key == title) {
@@ -63,16 +53,15 @@ index.callback_line = function(msg) {
             };
             obj += "</ul>";
             $(".chooseLine").html(obj);
-            // console.log(index.playChannels);
             return
         }
     }
 };
 
 // live
-index.invoke_data(index.url_live, index.data, index.callback_play);
+// index.invoke_data(index.url_live, index.data, index.callback_play);
 //加载线路
-index.invoke_data(index.url_line, index.data, index.callback_line);
+// index.invoke_data(index.url_line, index.data, index.callback_line);
 $(document).ready(function() {
     $(".chooseLine").on("click", "a", function() {
         $(this).closest('ul').find("a").removeClass('active');
@@ -97,10 +86,8 @@ $(document).ready(function() {
                 };
                 var video = [liveURL];
                 CKobject.embed('../lib/ckplayer/ckplayer.swf', 'a1', 'ckplayer_a1', '100%', '100%', false, flashvars, video, params);
-                // console.log(flashvars);
                 return;
             }
         }
     })
-
 });
