@@ -14,8 +14,11 @@ index.callback_play = function(msg) {
         var data = msg.today[key];
         // console.log(data);
         if (title == data.title) {
-            liveURL = data.url[0];
-            liveURL = liveURL.replace(" ", "");
+            liveURL = "";
+            if (data.url !== undefined) {
+                liveURL = data.url[0];
+                liveURL = liveURL.replace(" ", "");
+            }
             index.playChannels['默认'] = liveURL;
             var obj = '<li class="list-group-item"><a class="btn btn-default active" dataUrl="' + liveURL + '" >默认</a></li>';;
             $(".chooseLine").find("ul").append(obj);
@@ -40,6 +43,7 @@ index.callback_play = function(msg) {
 
 };
 index.callback_line = function(msg) {
+    console.log(msg);
     var data = msg[today()];
     for (var key in data) {
         if (key == title) {
@@ -48,8 +52,12 @@ index.callback_line = function(msg) {
                 var _index = data[key][keys];
                 var _name = _index.name;
                 var _url = _index.url;
-                index.playChannels[_name] = _url;
-                obj += '<li class="list-group-item"><a class="btn btn-default" dataUrl="' + _url + '" >' + _name + '</a></li>';
+                if (_name == "线路2") {
+                    obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '(一定能看,有广告)</a></li>';
+                } else {
+                    index.playChannels[_name] = _url;
+                    obj += '<li class="list-group-item"><a class="btn btn-default play-nomarl" dataUrl="' + _url + '" >' + _name + '</a></li>';
+                }
             };
             obj += "</ul>";
             $(".chooseLine").html(obj);
@@ -59,11 +67,11 @@ index.callback_line = function(msg) {
 };
 
 // live
-// index.invoke_data(index.url_live, index.data, index.callback_play);
-//加载线路
-// index.invoke_data(index.url_line, index.data, index.callback_line);
+index.invoke_data(index.url_live, index.data, index.callback_play);
+// 加载线路
+index.invoke_data(index.url_line, index.data, index.callback_line);
 $(document).ready(function() {
-    $(".chooseLine").on("click", "a", function() {
+    $(".chooseLine").on("click", ".play-nomarl", function() {
         $(this).closest('ul').find("a").removeClass('active');
         $(this).addClass('active');
         var name = $(this).html();
@@ -89,5 +97,10 @@ $(document).ready(function() {
                 return;
             }
         }
+    });
+    $(".chooseLine").on("click", ".play-iframe", function() {
+        var url = $(this).attr("dataUrl");
+        var obj = ' <iframe src="' + url + '" frameborder="0" width="100%" height="500px" id="a2"></iframe>';
+        $("#a1Box").html(obj);
     })
 });
