@@ -52,11 +52,12 @@ $(document).ready(function() {
             obj_today += '<li class="match-live"><dl><dt>';
             obj_today += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '"></dt>';
             obj_today += '<dd class="text-center">' + player1 + '</dd></dl>';
-            if (url == "") {
-                obj_today += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
-            } else {
-                obj_today += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
-            };
+            // if (url == "") {
+            //     obj_today += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
+            // } else {
+            //     obj_today += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
+            // };
+            obj_today += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
             obj_today += '<dd><span class="match-live-time">' + time + '</span></dd></dl>';
             obj_today += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
             obj_today += '<dd class="text-center">' + player2 + '</dd></dl></li>';
@@ -73,11 +74,12 @@ $(document).ready(function() {
             obj_tom += '<li class="match-live"><dl><dt>';
             obj_tom += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '"></dt>';
             obj_tom += '<dd class="text-center">' + player1 + '</dd></dl>';
-            if (url == "") {
-                obj_tom += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
-            } else {
-                obj_tom += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
-            };
+            // if (url == "") {
+            //     obj_tom += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
+            // } else {
+            //     obj_tom += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
+            // };
+           obj_tom += '<dl><dt><a class="match-nolive-page" href="public/play.html?&=' + title + '">暂无</a></dt>'
             obj_tom += '<dd><span class="match-live-time">' + time + '</span></dd></dl>';
             obj_tom += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
             obj_tom += '<dd class="text-center">' + player2 + '</dd></dl></li>';
