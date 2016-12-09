@@ -130,6 +130,10 @@ a.static-nav-link {
     margin-top: 134px;
 }
 
+#go-todayGame,#go-tomGame{
+    cursor: pointer;
+   color: #337ab7;
+}
 .match {}
 
 .match-team,
