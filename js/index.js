@@ -4,7 +4,7 @@ $(document).ready(function() {
         if (msg.reason == "查询成功") {
             var data = msg.result.list;
             $(".match h3").html(data[1].title + "赛况");
-            var obj = "<ul>";
+            var obj_today = "<ul'>";
             // 今日比赛结构
             data[1].tr.map(function(index, key) {
                 var player1logo = index.player1logo;
@@ -23,22 +23,23 @@ $(document).ready(function() {
                 } else {
                     var status = '<a class="f-green statistics" href="public/lookback.html?&=' + link2url + '">技统&nbsp&nbsp</a><a class="f-blue lookBack" href="' + link1url + '">&nbsp&nbsp集锦</a>'
                 }
-                obj += "<li class='match-team'><dl><dt>";
-                obj += "<img class='logox78 animated fadeInLeft' src='" + player1logo + "'></dt>";
-                obj += "<dd class='text-center'>" + player1 + "</dd></dl>";
-                obj += '<dl><dt><b class="match-team-score">' + score + '</b></dt>';
-                obj += '<dd><span class="match-team-time">' + status + '</span></dd></dl>';
-                obj += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
-                obj += '<dd class="text-center">' + player2 + '</dd></dl></li>';
-                return obj;
+                obj_today += "<li class='match-team'><dl><dt>";
+                obj_today += "<img class='logox78 animated fadeInLeft' src='" + player1logo + "'></dt>";
+                obj_today += "<dd class='text-center'>" + player1 + "</dd></dl>";
+                obj_today += '<dl><dt><b class="match-team-score">' + score + '</b></dt>';
+                obj_today += '<dd><span class="match-team-time">' + status + '</span></dd></dl>';
+                obj_today += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
+                obj_today += '<dd class="text-center">' + player2 + '</dd></dl></li>';
+                return obj_today;
             });
-            obj += "</ul>";
-            $(".match-team-box").html(obj);
+            obj_today += "</ul>";
+            $(".match-team-box").html(obj_today);
         }
     };
     index.callback_live = function(msg) {
         index.liveData = msg;
-        var obj = "<ul>";
+        var obj_today = "<ul id='todayGame'>";
+        var obj_tom = "<ul id='tomGame' style='display:none'>";
         for (key in msg.today) {
             var data = msg.today[key];
             var player1logo = data.teams[0].avatar;
@@ -48,20 +49,44 @@ $(document).ready(function() {
             var url = (data.url == undefined) ? "" : data.url[0];
             var title = encodeURIComponent(data.title);
             var time = data.time;
-            obj += '<li class="match-live"><dl><dt>';
-            obj += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '"></dt>';
-            obj += '<dd class="text-center">' + player1 + '</dd></dl>';
-            if (url == "") {
-                obj += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
-            } else {
-                obj += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
-            };
-            obj += '<dd><span class="match-live-time">' + time + '</span></dd></dl>';
-            obj += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
-            obj += '<dd class="text-center">' + player2 + '</dd></dl></li>';
+            obj_today += '<li class="match-live"><dl><dt>';
+            obj_today += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '"></dt>';
+            obj_today += '<dd class="text-center">' + player1 + '</dd></dl>';
+            // if (url == "") {
+            //     obj_today += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
+            // } else {
+            //     obj_today += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
+            // };
+            obj_today += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
+            obj_today += '<dd><span class="match-live-time">' + time + '</span></dd></dl>';
+            obj_today += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
+            obj_today += '<dd class="text-center">' + player2 + '</dd></dl></li>';
         }
-        obj += "</ul>";
-        $(".match-live-box").html(obj);
+        for (key in msg.tomorrow) {
+            var data = msg.tomorrow[key];
+            var player1logo = data.teams[0].avatar;
+            var player2logo = data.teams[1].avatar;
+            var player1 = data.teams[0].name;
+            var player2 = data.teams[1].name;
+            var url = (data.url == undefined) ? "" : data.url[0];
+            var title = encodeURIComponent(data.title);
+            var time = data.time;
+            obj_tom += '<li class="match-live"><dl><dt>';
+            obj_tom += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '"></dt>';
+            obj_tom += '<dd class="text-center">' + player1 + '</dd></dl>';
+            // if (url == "") {
+            //     obj_tom += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
+            // } else {
+            //     obj_tom += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
+            // };
+           obj_tom += '<dl><dt><a class="match-nolive-page" href="public/play.html?&=' + title + '">暂无</a></dt>'
+            obj_tom += '<dd><span class="match-live-time">' + time + '</span></dd></dl>';
+            obj_tom += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
+            obj_tom += '<dd class="text-center">' + player2 + '</dd></dl></li>';
+        }
+        obj_today += "</ul>";
+        obj_tom += "</ul>";
+        $(".match-live-box").html(obj_today + obj_tom);
     };
     index.callback_slogan = function(data) {
         var msg;
@@ -188,5 +213,14 @@ $(document).ready(function() {
     });
     $("#saveWeb").on("click", function() {
         index.AddFavorite("zhibodude", "www.zhibodude.com")
+    });
+    //切换直播日期
+    $(".dude-box").on("click", "#go-todayGame", function() {
+        $("#todayGame").show();
+        $("#tomGame").hide();
+    });
+    $(".dude-box").on("click", "#go-tomGame", function() {
+        $("#todayGame").hide();
+        $("#tomGame").show();
     });
 });
