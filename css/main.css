@@ -69,8 +69,8 @@ a.static-nav-link {
         width: 100%;
     }
     .ins-live-box h3 {
-    font-size: 20px;
-}
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -130,10 +130,12 @@ a.static-nav-link {
     margin-top: 134px;
 }
 
-#go-todayGame,#go-tomGame{
+#go-todayGame,
+#go-tomGame {
     cursor: pointer;
-   color: #337ab7;
+    color: #337ab7;
 }
+
 .match {}
 
 .match-team,
@@ -177,13 +179,16 @@ a.static-nav-link {
 .ins-live-box h3 {
     color: #a94442;
 }
-.ins-live-box-item{
+
+.ins-live-box-item {
     padding: 0;
 }
-.ins-live-box-item .thumbnail{
+
+.ins-live-box-item .thumbnail {
     margin-bottom: 0;
     border-radius: 0;
 }
+
 .ins-live-box p {
     word-wrap: break-word;
 }
@@ -213,4 +218,18 @@ footer {
     font-size: 16px;
     text-align: right;
     padding: 0 20px;
+}
+
+.fixBox {
+    position: fixed;
+    width: 90px;
+    right: 20px;
+    bottom: 200px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.fixBox li {
+    padding: 5px 9px;
+    opacity: 0.8
 }

@@ -25,7 +25,7 @@
 <body>
     <h1 style="display:none">直播今日所有NBA场次，高清，无码，免费。赛后技术统计，比赛精彩回放，全部给你收集好。免去你自己再一个一个找的麻烦，让你一次看个爽。记得收藏哦！</h1>
     <div class="wrap">
-        <header>
+        <header id="top">
             <nav class="navbar navbar-default navbar-static-top dude-navbar">
                 <div class="container">
                     <div class="navbar-header static-navbar-header">
@@ -80,7 +80,7 @@
             <div class="dude-mb">
             </div>
         </div>
-        <div class="dude-box">
+        <div class="dude-box"id="today" >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
@@ -106,13 +106,13 @@
                 </div>
             </div>
         </div>
-        <div class="dude-box2">
+        <div class="dude-box2" id="ins">
             <div class="container-fluid">
                 <div class="row ins-live-box">
                 </div>
             </div>
         </div>
-        <div class="dude-box3">
+        <div class="dude-box3" id="twitter">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">球员TWITTER动态 <small style="margin-left:14px;">(纯手工搬运 - -！，每天不定时更新)</small></h3>
@@ -125,6 +125,14 @@
     <footer>
         <a href="public/about.html">免责声明</a>
     </footer>
+    <div class="fixBox">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#top">回到顶层</a></li>
+            <li class="list-group-item"><a href="#today">今日比赛</a></li>
+            <li class="list-group-item"><a href="#ins">球员INS</a></li>
+            <li class="list-group-item"><a href="#twitter">球员TWITTER</a></li>
+        </ul>
+    </div>
     <script src="http://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://cdn.bootcss.com/masonry/3.3.2/masonry.pkgd.min.js"></script>
