@@ -50,7 +50,7 @@ $(document).ready(function() {
             var title = encodeURIComponent(data.title);
             var time = data.time;
             obj_today += '<li class="match-live"><dl><dt>';
-            obj_today += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '"></dt>';
+            obj_today += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '" alt="jrs直播"></dt>';
             obj_today += '<dd class="text-center">' + player1 + '</dd></dl>';
             // if (url == "") {
             //     obj_today += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
@@ -72,7 +72,7 @@ $(document).ready(function() {
             var title = encodeURIComponent(data.title);
             var time = data.time;
             obj_tom += '<li class="match-live"><dl><dt>';
-            obj_tom += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '"></dt>';
+            obj_tom += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '" alt="jrs直播"></dt>';
             obj_tom += '<dd class="text-center">' + player1 + '</dd></dl>';
             // if (url == "") {
             //     obj_tom += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
@@ -113,9 +113,9 @@ $(document).ready(function() {
             var weight = index.weight;
             var head = index.head;
             var msg = index.msg;
-            var img = (index.img == "no") ? "" : '<p><img src="http://www.zhibodude.com/static/twitterImg/' + index.img + '" alt=""  class="twitterImg"></p>';
+            var img = (index.img == "no") ? "" : '<p><img src="http://www.zhibodude.com/static/twitterImg/' + index.img + '" alt="兄弟直播"  class="twitterImg"></p>';
             obj += '<li class="list-group-item"><div class="media"><a class="media-left" href="#">';
-            obj += '<img src=".' + head + '" alt="用户头像" class="playerHead"></a>';
+            obj += '<img src=".' + head + '" alt="兄弟直播" class="playerHead"></a>';
             obj += '<div class="media-body"><h4 class="media-heading">' + name + '<small style="margin-left:14px;">' + time + '</small></h4><div><p>' + msg + '</p></div>';
             obj += img + '</div></div></li>';
         };
@@ -131,7 +131,7 @@ $(document).ready(function() {
             var msg = index.msg;
             var img = index.img;
             obj += '<div class="ins-live-box-item col-xs-6 col-sm-4 col-md-3 col-lg-2"> <div class="thumbnail">';
-            obj += '<img src="static/insImg/' + img + '"><div class="caption">';
+            obj += '<img src="static/insImg/' + img + '" alt="jrs直播"><div class="caption">';
             obj += '<h3>' + name + '</h3>';
             obj += '<p>' + msg + '</p></div></div></div>';
         };
