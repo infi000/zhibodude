@@ -214,3 +214,15 @@ footer {
     text-align: right;
     padding: 0 20px;
 }
+.fixBox{
+position: fixed;
+    width: 90px;
+    right: 20px;
+    bottom: 200px;
+    font-size: 12px;
+    text-align: center;
+}
+.fixBox li{
+    padding: 5px 9px;
+    opacity: 0.8
+}
