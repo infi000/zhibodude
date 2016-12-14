@@ -25,8 +25,11 @@
                 <div class="col-sm-3 col-xs-12 f-pad0">
                     <div class="chooseLine">
                         <ul class="list-group">
-                             <li class="list-group-item"><a class="btn btn-default" onclick="letv()">乐视(詹俊)</a></li>
-                            <li class="list-group-item"><a class="btn btn-default" onclick="newView()">新视觉(刘越)</a></li>
+                             <li class="list-group-item"><a class="btn btn-default" onclick="letv1()">乐视：利物浦VS米堡</a></li>
+                            <li class="list-group-item"><a class="btn btn-default" onclick="letv2()">乐视：桑德兰vs切尔西</a></li>
+                            <li class="list-group-item"><a class="btn btn-default" onclick="pptv1()">PPTV：桑德兰vs切尔西</a></li>
+                            <li class="list-group-item"><a class="btn btn-default" onclick="letv3()">乐视：曼城vs沃特福德</a></li>
+                            <li class="list-group-item"><a class="btn btn-default" onclick="newView()">新英：水晶宫vs曼联</a></li>
                             <li class="list-group-item" class="text-center">cctv5和广东体育在主页观看</li>
 
                         </ul>
@@ -48,9 +51,18 @@
         <script src="https://s11.cnzz.com/z_stat.php?id=1260899603&web_id=1260899603" language="JavaScript"></script>
     </div>
     <script>
-    function letv () {
-       $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/e/letv/letv34-1800.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    function letv1 () {
+       $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/e/letv/letv34.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    } function letv2 () {
+       $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/e/letv/letv33.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
     }
+    function letv3 () {
+       $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/e/letv/letv36.html?classid=3&id=4743" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    }
+     function pptv1 () {
+       $("#a1Box").html( '<iframe src="http://pub.pptv.com/player/iframe/index.html?rcc_id=500W#w=100%&h=100%&id=300225" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    }
+    
     function newView(){
                $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/qie/538.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
     }
