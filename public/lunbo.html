@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="keywords" content="jrs直播,兄弟直播,jrs,体育直播,CCTV5直播,zhibodude" />
+    <meta name="description" content="力求免费提供每一场nba比赛的画面，高清，清爽，无广告。赛后技术统计，比赛精彩回放，球星ins，推特，全部给你收集好。免去你自己再一个一个找的麻烦，让你一次看个爽。">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/page.css">
+    <title>兄弟直播-喜欢NBA兄弟的集合地</title>
+    <!-- // <script src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script> -->
+    <style>
+    #a1Box {
+        height: 700px;
+    }
+    
+    @media (max-width: 767px) {
+        #a1Box {
+            height: 250px;
+        }
+    }
+    
+    .clear {
+        clear: both;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../">返回兄弟直播首页</a>
+    </header>
+    <div class="playerBox">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12 f-pad0" id="a1Box">
+                    <!-- <div id="a1"></div> -->
+                </div>
+                <div class="col-sm-3 col-xs-12 f-pad0">
+                    <div class="chooseLine">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h2 class="text-center">精彩赛事轮播</h2>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class='btn-group'>
+                                    <button class="btn btn-success " onclick="player('leguanfang','1162')">英超</button>
+                                    <button class="btn btn-success " onclick="player('leguanfang','1378')">欧冠</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','677')">欧洲足球</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','1163')">意甲</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','932')">搏击</button>
+                                </div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class="btn-group">
+                                    <button class="btn btn-success" onclick="player('leguanfang','1164')">德甲</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','332')">中超</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','1161')">法甲</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','392')">体育+</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','2284')">钓鱼</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','1723')">台球</button>
+                                </div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class="btn-group">
+                                    <button class="btn btn-success" onclick="player('leguanfang','227')">体育1</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','678')">体育2</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','272')">足球</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','2283')">篮球1</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','2299')">棋牌</button>
+                                </div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class="btn-group">
+                                    <button class="btn btn-success" onclick="player('leguanfang','289')">篮球2</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','1195')">粤语体育</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','2829')">皇马</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','2828')">AC米兰</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','1722')">橄榄球</button>
+                                </div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class="btn-group">
+                                    <button class="btn btn-success" onclick="player('leguanfang','2280')">国际米兰</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','255')">高尔夫</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','2052')">棒球</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','256')">网球</button>
+                                    <button class="btn btn-success" onclick="player('leguanfang','1544')">羽毛球</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="../lib/ckplayer/ckplayer.js" charset="utf-8"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <div style="display:none">
+        <script src="https://s11.cnzz.com/z_stat.php?id=1260899603&web_id=1260899603" language="JavaScript"></script>
+    </div>
+    <script>
+    function player(player, vid) {
+        switch (player) {
+            case 'cntvzhibo':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://123.57.209.66/video.php?type=cntvzhibo&id=" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'letv':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='/zhibotv/letv.html?" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'qita':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'letvlive':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://api.youxia5.com/video.php?type=letvlive&id=" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'pptv2':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://pub.pptv.com/player/iframe/index.html#w=100%&amp;h=100%&amp;id=" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'nba':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://www.qqzhibo.tk/u/nba/" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'jrs':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://nba.tmiaoo.com/n/" + vid + "/p.html' allowfullscreen></iframe>";
+                break
+            case 'leshi':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://api.youxia5.com/video.php?type=letvlives&id=" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'leid':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='/zhibotv/leid.html?id=" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'pptv':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='/zhibotv/pptv.php?id=" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'sina':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://video.sina.com.cn/interface/l/openPlPlay.php?wid=" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'leguanfang':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://minisite.letv.com/tuiguang/index.shtml?islive=1&channelId=" + vid + "&typeFrom=letv_live_360live&ark=100&cid=4&wmode=opaque&prl=0&pay=0&joint=1' allowfullscreen></iframe>";
+                break
+            case 'qie':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://live.qq.com/" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'youku':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://vku.youku.com/live/play?id=" + vid + "' allowfullscreen></iframe>";
+                break
+            case 'leqiuba':
+                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='/zhibotv/" + vid + ".html' allowfullscreen></iframe>";
+                break
+        }
+    };
+    $(document).ready(function() {
+        player('leguanfang', '1378');
+    });
+    </script>
+</body>
+
+</html>
