@@ -74,8 +74,8 @@ index.callback_wenzi = function(msg) {
             var wenziUrl = index.url;
    console.log(index.title);
             console.log(title);
-            var iframe = '<iframe src="' + wenziUrl + '" frameborder="0" width="100%" height="500px;"></iframe>';
-            $(".wzlive").html(iframe);
+          
+            $(".wzlive iframe").attr("src",wenziUrl);
             return
         }
     });
