@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-     <meta name="keywords" content="jrs直播,兄弟直播,jrs,体育直播,CCTV5直播,zhibodude" />
+    <meta name="keywords" content="jrs直播,兄弟直播,jrs,体育直播,CCTV5直播,zhibodude" />
     <meta name="description" content="力求免费提供每一场nba比赛的画面，高清，清爽，无广告。赛后技术统计，比赛精彩回放，球星ins，推特，全部给你收集好。免去你自己再一个一个找的麻烦，让你一次看个爽。">
     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/page.css">
@@ -14,7 +14,6 @@
 </head>
 
 <body>
-   <h1 style="width:0;height:0;position: fixed;top: -100px;">jrs直播</h1>
     <header>
         <a href="../">
             < 兄弟直播首页</a>
@@ -25,24 +24,24 @@
                 <div class="col-sm-3 col-xs-12 f-pad0">
                     <div class="chooseLine">
                         <ul class="list-group">
-                             <li class="list-group-item"><a class="btn btn-default" onclick="letv1()">乐视:英超1</a></li>
+                            <li class="list-group-item"><a class="btn btn-default" onclick="letv1()">乐视:英超1</a></li>
                             <li class="list-group-item"><a class="btn btn-default" onclick="letv2()">乐视:英超2</a></li>
                             <li class="list-group-item"><a class="btn btn-default" onclick="pptv1()">PPTV：西甲</a></li>
                             <li class="list-group-item"><a class="btn btn-default" onclick="letv3()">乐视:英超3</a></li>
                             <li class="list-group-item"><a class="btn btn-default" onclick="newView()">新英</a></li>
                             <li class="list-group-item" class="text-center">cctv5和广东体育(曼城VS抢手)在主页观看</li>
-
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-9 col-xs-12 f-pad0" id="a1Box">
                     <!-- <div id="a1"></div> -->
-                           <iframe src="http://nba.tmiaoo.com/e/letv/letv34-1800.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>
+                    <iframe src="http://nba.tmiaoo.com/e/letv/letv34-1800.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>
                 </div>
-  
             </div>
         </div>
     </div>
+    <div>
+        <iframe src="http://nlive.3g.cn/1/?lid=58186&sid=&wid=&waped=9&pz=&gaid=&pvs=" frameborder="0" width="100%" height="500px;"></iframe>
     </div>
     <script type="text/javascript" src="../lib/ckplayer/ckplayer.js" charset="utf-8"></script>
     <script src="http://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
@@ -51,22 +50,25 @@
         <script src="https://s11.cnzz.com/z_stat.php?id=1260899603&web_id=1260899603" language="JavaScript"></script>
     </div>
     <script>
-    function letv1 () {
-       $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/e/letv/letv34.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
-    } function letv2 () {
-       $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/e/letv/letv33.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
-    }
-    function letv3 () {
-       $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/e/letv/letv36.html?classid=3&id=4743" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
-    }
-     function pptv1 () {
-       $("#a1Box").html( '<iframe src="http://pub.pptv.com/player/iframe/index.html?rcc_id=500W#w=1000&h=480&id=300384" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
-    }
-    
-    function newView(){
-               $("#a1Box").html( '<iframe src="http://nba.tmiaoo.com/qie/538.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    function letv1() {
+        $("#a1Box").html('<iframe src="http://nba.tmiaoo.com/e/letv/letv34.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
     }
 
+    function letv2() {
+        $("#a1Box").html('<iframe src="http://nba.tmiaoo.com/e/letv/letv33.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    }
+
+    function letv3() {
+        $("#a1Box").html('<iframe src="http://nba.tmiaoo.com/e/letv/letv36.html?classid=3&id=4743" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    }
+
+    function pptv1() {
+        $("#a1Box").html('<iframe src="http://pub.pptv.com/player/iframe/index.html?rcc_id=500W#w=1000&h=480&id=300384" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    }
+
+    function newView() {
+        $("#a1Box").html('<iframe src="http://nba.tmiaoo.com/qie/538.html" frameborder="0" width="100%" height="700px" id="a2"></iframe>');
+    }
     </script>
 </body>
 
