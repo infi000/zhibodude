@@ -87,7 +87,7 @@ index.invoke_data(index.url_live, index.data, index.callback_play);
 index.invoke_data(index.url_line, index.data, index.callback_line);
 //加载文字直播
 $.ajax({
-    url: "http:127.0.0.1:3000/getjson/3g",
+    url: "http://127.0.0.1:3000/getjson/3g",
     type: "POST",
     success: index.callback_wenzi
 });
