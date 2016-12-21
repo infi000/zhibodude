@@ -19,7 +19,7 @@ index.callback_play = function(msg) {
                 liveURL = data.url[0];
                 liveURL = liveURL.replace(" ", "");
             }
-              $("#a1Box").html("<div id='a1'></div>");
+            $("#a1Box").html("<div id='a1'></div>");
             index.playChannels['默认'] = liveURL;
             var obj = '<li class="list-group-item"><a class="btn btn-default active play-nomarl" dataUrl="' + liveURL + '" >默认</a></li>';;
             $(".chooseLine").find("ul").append(obj);
@@ -44,7 +44,7 @@ index.callback_play = function(msg) {
 
 };
 index.callback_line = function(msg) {
-    console.log(msg);
+    // console.log(msg);
     var data = msg[today()];
     for (var key in data) {
         if (key == title) {
@@ -66,11 +66,32 @@ index.callback_line = function(msg) {
         }
     }
 };
+index.callback_wenzi = function(msg) {
+    msg = JSON.parse(msg);
+    msg.map(function(index, key) {
+
+        if (index.title == title) {
+            var wenziUrl = index.url;
+   console.log(index.title);
+            console.log(title);
+            var iframe = '<iframe src="' + wenziUrl + '" frameborder="0" width="100%" height="500px;"></iframe>';
+            $(".wzlive").html(iframe);
+            return
+        }
+    });
+}
 
 // live
 index.invoke_data(index.url_live, index.data, index.callback_play);
 // 加载线路
 index.invoke_data(index.url_line, index.data, index.callback_line);
+//加载文字直播
+$.ajax({
+    url: "http:127.0.0.1:3000/getjson/3g",
+    type: "POST",
+    success: index.callback_wenzi
+});
+
 $(document).ready(function() {
     $(".chooseLine").on("click", ".play-nomarl", function() {
         $(this).closest('ul').find("a").removeClass('active');
@@ -100,8 +121,7 @@ $(document).ready(function() {
         }
     });
     $(".chooseLine").on("click", ".play-iframe", function() {
-
-         $(this).closest('ul').find("a").removeClass('active');
+        $(this).closest('ul').find("a").removeClass('active');
         $(this).addClass('active');
         var url = $(this).attr("dataUrl");
         var obj = ' <iframe src="' + url + '" frameborder="0" width="100%" height="500px" id="a2"></iframe>';
