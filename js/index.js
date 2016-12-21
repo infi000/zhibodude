@@ -79,7 +79,7 @@ $(document).ready(function() {
             // } else {
             //     obj_tom += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
             // };
-           obj_tom += '<dl><dt><a class="match-nolive-page" href="public/play.html?&=' + title + '">暂无</a></dt>'
+            obj_tom += '<dl><dt><a class="match-nolive-page" href="public/play.html?&=' + title + '">暂无</a></dt>'
             obj_tom += '<dd><span class="match-live-time">' + time + '</span></dd></dl>';
             obj_tom += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
             obj_tom += '<dd class="text-center">' + player2 + '</dd></dl></li>';
@@ -170,16 +170,16 @@ $(document).ready(function() {
         // console.log(13);
         var title = $(this).attr("dataType");
         var channels = {
-            "CCTV—5":"http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8",
-            "五星体育":"http://183.207.255.190/live/program/live/ssty/2300000/mnf.m3u8",
-            "广东体育":"http%3A%2F%2F124.192.145.192%2Fm3u8%2Fguangdongtiyu_1300%2Fdesc.m3u8%3Fstream_id%3Dguangdongtiyu_1300%26path%3D124.192.145.211%2C124.192.145.83%2C124.192.145.154%26amltag%3D202%26mltag%3D202%26platid%3D10%26splatid%3D1003%26qos%3D4%26fcheck%3D0%26uid%3D2093832770.rp%26keyitem%3DdpoOd-l3AnupIUuBI8VtFwmKzWltcfnZpngeV5Yo3I1Oleh6yGrbVeKRoRQ.%26ntm%3D1480431000%26nkey2%3Dfeb3771b39490ce6e0a21e5652f3002f%26nkey%3D417f638fbb98588d013e33e7941255b9%26tag%3Dlive%26video_type%3Dm3u8%26useloc%3D0%26mslice%3D3%26uidx%3D0%26errc%3D0%26gn%3D149%26lrtmcd%3D109%26buss%3D202%26cips%3D124.205.90.66%26geo%3DCN-1-12-16%26tmn%3D1480412802%26pnl%3D149%2C149%2C398%2C224%26ext%3Dm3u8%26sign%3Dlive_web%26ostype%3Dmacos%26hwtype%3Diphone%26tm%3D1480412803%26key%3D8b47032625e85fa108669f2ffd476fec&s=4",
-            "北京体育":"http://btv6.vtime.cntv.cloudcdn.net:8500/cache/314_/seg0/index.m3u8",
-            "青海卫视":"http://223.75.3.82:8081/live/live3/QHWS/2000/QHWS-2000-node1.m3u8?fmt=x264_2000k_mpegts&authType=2&node=1&type=live",
+            "CCTV—5": "http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8",
+            "五星体育": "http://183.207.255.190/live/program/live/ssty/2300000/mnf.m3u8",
+            "广东体育": "http://125.88.92.166:30001/PLTV/88888956/224/3221227703/1.m3u8",
+            "北京体育": "http://btv6.vtime.cntv.cloudcdn.net:8500/cache/314_/seg0/index.m3u8",
+            "青海卫视": "http://223.75.3.82:8081/live/live3/QHWS/2000/QHWS-2000-node1.m3u8?fmt=x264_2000k_mpegts&authType=2&node=1&type=live",
         }
         var URL;
-        for(var key in channels){
-            if(title==key){
-                URL=channels[key];
+        for (var key in channels) {
+            if (title == key) {
+                URL = channels[key];
                 break;
             }
         }
