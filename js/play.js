@@ -48,20 +48,21 @@ index.callback_line = function(msg) {
     var data = msg[today()];
     for (var key in data) {
         if (key == title) {
-            var obj = '<ul class="list-group">';
+            var obj = '';
             for (var keys in data[key]) {
                 var _index = data[key][keys];
                 var _name = _index.name;
                 var _url = _index.url;
-                if (_name == "线路2") {
-                    obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '(推荐)</a></li>';
+                var _type = _idnex.type;
+                if (_type == "iframe") {
+                    obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '</a></li>';
                 } else {
                     index.playChannels[_name] = _url;
                     obj += '<li class="list-group-item"><a class="btn btn-default play-nomarl" dataUrl="' + _url + '" >' + _name + '</a></li>';
                 }
             };
-            obj += "</ul>";
-            $(".chooseLine").html(obj);
+
+            $(".chooseLine ul").append(obj);
             return
         }
     }
@@ -72,7 +73,7 @@ index.callback_wenzi = function(msg) {
 
         if (index.title == title) {
             var wenziUrl = index.url;
-   console.log(index.title);
+            console.log(index.title);
             console.log(title);
             var iframe = '<iframe src="' + wenziUrl + '" frameborder="0" width="100%" height="500px;"></iframe>';
             $(".wzlive").html(iframe);
