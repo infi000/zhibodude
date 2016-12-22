@@ -75,8 +75,8 @@ index.callback_wenzi = function(msg) {
             var wenziUrl = index.url;
             console.log(index.title);
             console.log(title);
-            var iframe = '<iframe src="' + wenziUrl + '" frameborder="0" width="100%" height="500px;"></iframe>';
-            $(".wzlive").html(iframe);
+
+            $(".wzlive iframe").attr("src", wenziUrl);
             return
         }
     });
@@ -86,12 +86,6 @@ index.callback_wenzi = function(msg) {
 index.invoke_data(index.url_live, index.data, index.callback_play);
 // 加载线路
 index.invoke_data(index.url_line, index.data, index.callback_line);
-//加载文字直播
-$.ajax({
-    url: "http://127.0.0.1:3000/getjson/3g",
-    type: "POST",
-    success: index.callback_wenzi
-});
 
 $(document).ready(function() {
     $(".chooseLine").on("click", ".play-nomarl", function() {
@@ -127,5 +121,12 @@ $(document).ready(function() {
         var url = $(this).attr("dataUrl");
         var obj = ' <iframe src="' + url + '" frameborder="0" width="100%" height="500px" id="a2"></iframe>';
         $("#a1Box").html(obj);
-    })
+    });
+    //加载文字直播
+    $.ajax({
+        url: "http://www.zhibodude.com:3000/getjson/3g",
+        type: "POST",
+        success: index.callback_wenzi
+    });
+
 });

@@ -2,7 +2,7 @@
 * @Author: 张驰阳
 * @Date:   2016-11-30 17:52:28
 * @Last Modified by:   张驰阳
-* @Last Modified time: 2016-12-21 13:00:05
+* @Last Modified time: 2016-12-21 13:10:12
 */
 
 * {
@@ -57,6 +57,9 @@ padding: 0;
     .chatBox {
         display: none;
     }
+    #a1 {
+    height: 255px;
+}
 }
 
 .chooseLine {

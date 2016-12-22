@@ -36,7 +36,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-9 col-xs-12 f-pad0" id="a1Box">
-                    <!-- <div id="a1"></div> -->
+                    <iframe id='video' width='100%' height='100%' frameborder='0' src='' allowfullscreen></iframe>
                 </div>
                 <div class="col-sm-3 col-xs-12 f-pad0">
                     <div class="chooseLine">
@@ -105,53 +105,8 @@
     </div>
     <script>
     function player(player, vid) {
-        switch (player) {
-            case 'cntvzhibo':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://123.57.209.66/video.php?type=cntvzhibo&id=" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'letv':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='/zhibotv/letv.html?" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'qita':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'letvlive':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://api.youxia5.com/video.php?type=letvlive&id=" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'pptv2':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://pub.pptv.com/player/iframe/index.html#w=100%&amp;h=100%&amp;id=" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'nba':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://www.qqzhibo.tk/u/nba/" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'jrs':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://nba.tmiaoo.com/n/" + vid + "/p.html' allowfullscreen></iframe>";
-                break
-            case 'leshi':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://api.youxia5.com/video.php?type=letvlives&id=" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'leid':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='/zhibotv/leid.html?id=" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'pptv':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='/zhibotv/pptv.php?id=" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'sina':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://video.sina.com.cn/interface/l/openPlPlay.php?wid=" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'leguanfang':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://minisite.letv.com/tuiguang/index.shtml?islive=1&channelId=" + vid + "&typeFrom=letv_live_360live&ark=100&cid=4&wmode=opaque&prl=0&pay=0&joint=1' allowfullscreen></iframe>";
-                break
-            case 'qie':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://live.qq.com/" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'youku':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='http://vku.youku.com/live/play?id=" + vid + "' allowfullscreen></iframe>";
-                break
-            case 'leqiuba':
-                document.getElementById('a1Box').innerHTML = "<iframe id='video' width='100%' height='100%' frameborder='0' src='/zhibotv/" + vid + ".html' allowfullscreen></iframe>";
-                break
-        }
+
+        $("#a1Box iframe").attr("src", "http://minisite.letv.com/tuiguang/index.shtml?islive=1&channelId=" + vid + "&typeFrom=letv_live_360live&ark=100&cid=4&wmode=opaque&prl=0&pay=0&joint=1");
     };
     $(document).ready(function() {
         player('leguanfang', '1378');
