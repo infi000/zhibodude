@@ -53,7 +53,7 @@ index.callback_line = function(msg) {
                 var _index = data[key][keys];
                 var _name = _index.name;
                 var _url = _index.url;
-                var _type = _idnex.type;
+                var _type = _index.type;
                 if (_type == "iframe") {
                     obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '</a></li>';
                 } else {
