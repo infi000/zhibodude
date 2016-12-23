@@ -171,6 +171,7 @@ $(document).ready(function() {
         var title = $(this).attr("dataType");
         var channels = {
             "CCTV—5": "http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8",
+            "CCTV—5_2": "http://111.39.226.103:8112/120000001001/wlds:8080/ysten-business/live/cctv-5/.m3u8&s=4&c=1",
             "五星体育": "http://183.207.255.190/live/program/live/ssty/2300000/mnf.m3u8",
             "广东体育": "http://125.88.92.166:30001/PLTV/88888956/224/3221227703/1.m3u8",
             "北京体育": "http://btv6.vtime.cntv.cloudcdn.net:8500/cache/314_/seg0/index.m3u8",
