@@ -40,7 +40,7 @@ padding: 0;
 }
 */
 
-#a1Box {
+#a1,#a2 {
     width: 100%;
     height: 700px;
 }
@@ -56,8 +56,8 @@ padding: 0;
 @media (max-width: 767px) {
     .chatBox {
         display: none;
-    }ox
-    #a1Box {
+    }
+    #a1,#a2 {
     height: 255px;
 }
 }
