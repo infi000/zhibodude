@@ -110,7 +110,7 @@ index.invoke_data(index.url_live, index.data, index.callback_play);
 // 加载线路
 // index.invoke_data(index.url_line, index.data, index.callback_line);
 $.ajax({
-    url: 'http://127.0.0.1:3000/getjson/jrs',
+    url: 'http://www.zhibodude.com:3000/getjson/jrs',
     type: 'POST',
     dataType: 'json',
     success: index.callback_line
