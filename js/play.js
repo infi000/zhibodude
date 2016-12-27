@@ -43,15 +43,40 @@ index.callback_play = function(msg) {
     };
 
 };
+// index.callback_line = function(msg) {
+//     // console.log(msg);
+//     var data = msg[today()];
+//     for (var key in data) {
+//         if (key == title) {
+//             var obj = '';
+//             for (var keys in data[key]) {
+//                 var _index = data[key][keys];
+//                 var _name = _index.name;
+//                 var _url = _index.url;
+//                 var _type = _index.type;
+//                 if (_type == "iframe") {
+//                     obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '</a></li>';
+//                 } else {
+//                     index.playChannels[_name] = _url;
+//                     obj += '<li class="list-group-item"><a class="btn btn-default play-nomarl" dataUrl="' + _url + '" >' + _name + '</a></li>';
+//                 }
+//             };
+
+//             $(".chooseLine ul").append(obj);
+//             return
+//         }
+//     }
+// };
 index.callback_line = function(msg) {
     // console.log(msg);
-    var data = msg[today()];
+    var data = msg;
     for (var key in data) {
-        if (key == title) {
+        var macth = data[key].macth;
+        if (macth == title) {
             var obj = '';
-            for (var keys in data[key]) {
-                var _index = data[key][keys];
-                var _name = _index.name;
+            for (var keys in data[key].line) {
+                var _index = data[key].line[keys];
+                var _name = _index.line;
                 var _url = _index.url;
                 var _type = _index.type;
                 if (_type == "iframe") {
@@ -73,10 +98,8 @@ index.callback_wenzi = function(msg) {
 
         if (index.title == title) {
             var wenziUrl = index.url;
-            console.log(index.title);
-            console.log(title);
-
-            $(".wzlive iframe").attr("src", wenziUrl);
+            var obj='<iframe src="'+wenziUrl+'" frameborder="0" width="100%" height="500px"></iframe>'
+            $(".wzlive").html(obj);
             return
         }
     });
@@ -85,7 +108,14 @@ index.callback_wenzi = function(msg) {
 // live
 index.invoke_data(index.url_live, index.data, index.callback_play);
 // 加载线路
-index.invoke_data(index.url_line, index.data, index.callback_line);
+// index.invoke_data(index.url_line, index.data, index.callback_line);
+$.ajax({
+    url: 'http://127.0.0.1:3000/getjson/jrs',
+    type: 'POST',
+    dataType: 'json',
+    success: index.callback_line
+})
+
 
 $(document).ready(function() {
     $(".chooseLine").on("click", ".play-nomarl", function() {
@@ -123,10 +153,12 @@ $(document).ready(function() {
         $("#a1Box").html(obj);
     });
     //加载文字直播
-    $.ajax({
-        url: "http://www.zhibodude.com:3000/getjson/3g",
-        type: "POST",
-        success: index.callback_wenzi
-    });
-
+    $(".wzlive button").on("click", function() {
+        console.log(123);
+        $.ajax({
+            url: "http://www.zhibodude.com:3000/getjson/3g",
+            type: "POST",
+            success: index.callback_wenzi
+        });
+    })
 });

@@ -52,11 +52,6 @@ $(document).ready(function() {
             obj_today += '<li class="match-live"><dl><dt>';
             obj_today += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '" alt="jrs直播"></dt>';
             obj_today += '<dd class="text-center">' + player1 + '</dd></dl>';
-            // if (url == "") {
-            //     obj_today += '<dl><dt><a class="match-nolive-page">暂无</a></dt>'
-            // } else {
-            //     obj_today += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
-            // };
             obj_today += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
             obj_today += '<dd><span class="match-live-time">' + time + '</span></dd></dl>';
             obj_today += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
