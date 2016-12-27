@@ -40,7 +40,7 @@ padding: 0;
 }
 */
 
-#a1 {
+#a1,#a2 {
     width: 100%;
     height: 700px;
 }
@@ -57,7 +57,7 @@ padding: 0;
     .chatBox {
         display: none;
     }
-    #a1 {
+    #a1,#a2 {
     height: 255px;
 }
 }
