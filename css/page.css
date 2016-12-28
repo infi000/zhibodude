@@ -2,7 +2,7 @@
 * @Author: 张驰阳
 * @Date:   2016-11-30 17:52:28
 * @Last Modified by:   张驰阳
-* @Last Modified time: 2016-12-21 13:10:12
+* @Last Modified time: 2016-12-28 16:59:25
 */
 
 * {
@@ -34,13 +34,15 @@ header a:hover {
     padding: 0;
 }
 
-
-/*.playerBox .col-sm-1{
-padding: 0;
+body {
+    background: #f5f8fa;
 }
-*/
 
-#a1,#a2 {
+
+/*播放页面*/
+
+#a1,
+#a2 {
     width: 100%;
     height: 700px;
 }
@@ -57,21 +59,14 @@ padding: 0;
     .chatBox {
         display: none;
     }
-    #a1,#a2 {
-    height: 255px;
-}
-}
-
-.chooseLine {
-    /*background: yellow;*/
+    #a1,
+    #a2 {
+        height: 255px;
+    }
 }
 
 .chooseLine li a {
     width: 100%;
-}
-
-.chatBox {
-    /*background: red;*/
 }
 
 .chat-input {
@@ -80,3 +75,95 @@ padding: 0;
 }
 
 
+/*播放页面结束*/
+
+
+/*twitter*/
+.tellme{
+    margin: 10px 0;
+}
+.twitter-user {
+    width: 280px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 10px 10px 0;
+    margin: 4px;
+}
+
+.twitter-user:hover {
+    background: #fff9f9;
+}
+
+.twitter-user dl.pull-left {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.twitter-user .pull-left dt a {
+    float: right;
+    margin-top: 30px;
+}
+
+.twitter-user-head {
+    background-color: #a94442;
+    border-radius: 6px;
+    display: inline-block;
+    padding: 3px;
+    position: relative;
+    vertical-align: bottom;
+    z-index: 1;
+}
+
+.twitter-user-head img {
+    border-radius: 5px;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+
+.twitter-user dd span {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+.twitter-user p {
+    color: #66757f;
+    font-weight: 400;
+    word-wrap: break-word;
+    height: 200px;
+    font-size: 14px;
+}
+
+@media (max-width: 767px) {
+.twitter-user p {
+    display: none;
+}
+.twitter-user{
+    width: 100%;
+}
+}
+
+
+/*twitter结束*/
+/*twitter个人頁面*/
+.twitterImg {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.twitter-live-box .media-heading {
+    color: #a94442;
+}
+.dude-box3 .Emoji{
+    height: 1.25em;
+    width: 1.25em;
+    padding: 0 .05em 0 .1em;
+    vertical-align: -.2em;
+}
+/*twitter个人結束*/

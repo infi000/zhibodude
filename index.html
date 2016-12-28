@@ -47,28 +47,19 @@
                         </a>
                         <ul class="nav navbar-nav dude-navbar-nav navbar-right">
                             <li>
-                                <a class="static-nav-link" href="public/lunbo.html">精彩比赛轮播</a>
-                            </li>
-                            <li id="cctv">
-                                <a class="static-nav-link liveChannels" dataType="CCTV—5">CCAV5</a>
-                            </li>
-                            <li id="cctv_2">
-                                <a class="static-nav-link liveChannels" dataType="CCTV—5_2">CCAV5-2</a>
-                            </li>
-                            <li id="bttv">
-                                <a class="static-nav-link liveChannels" dataType="北京体育">北体</a>
-                            </li>
-                            <li id="gttv">
-                                <a class="static-nav-link liveChannels" dataType="广东体育">广体</a>
-                            </li>
-                            <li id="sttv">
-                                <a class="static-nav-link liveChannels" dataType="五星体育">五星体育</a>
-                            </li>
-                            <li id="fytv">
-                                <a class="static-nav-link liveChannels" dataType="青海卫视">青海</a>
+                                <a href="public/twitter.html" class="static-nav-link">球星TWITTER</a>
                             </li>
                             <li>
+                                 <a  href="public/lunbo.html" target="_blank" class="static-nav-link">精彩比赛轮播</a>
+                            </li>
+                      <!--       <li>
+                                <a class="static-nav-link" href="#" data-toggle="modal" data-target=".lklq">乱侃篮球</a>
+                            </li> -->
+                            <li>
                                 <a id="saveWeb" class="static-nav-link">收藏本站</a>
+                            </li>
+                            <li>
+                                <a href="public/about.html" class="static-nav-link">技术讨论与合作</a>
                             </li>
                         </ul>
                     </div>
@@ -91,7 +82,39 @@
         <div class="dude-box" id="today">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-sm-2 col-xs-12">
+                        <div class="panel panel-primary text-center">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">常用频道</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-group" style="margin:0 -15px;">
+                                    <li class="list-group-item">
+                                        <a class="" href="public/lunbo.html" target="_blank">精彩比赛轮播</a>
+                                    </li>
+                                    <li id="cctv" class="list-group-item">
+                                        <a class=" liveChannels" dataType="CCTV—5">CCAV5</a>
+                                    </li>
+                                    <li id="cctv_2" class="list-group-item">
+                                        <a class=" liveChannels" dataType="CCTV—5_2">CCAV5-2</a>
+                                    </li>
+                                    <li id="bttv" class="list-group-item">
+                                        <a class=" liveChannels" dataType="北京体育">北体</a>
+                                    </li>
+                                    <li id="gttv" class="list-group-item">
+                                        <a class=" liveChannels" dataType="广东体育">广体</a>
+                                    </li>
+                                    <li id="sttv" class="list-group-item">
+                                        <a class=" liveChannels" dataType="五星体育">五星体育</a>
+                                    </li>
+                                    <li id="fytv" class="list-group-item">
+                                        <a class=" liveChannels" dataType="青海卫视">青海</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-xs-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"> <a id="go-todayGame" class="pull-left">今日比赛直播</a> <a id="go-tomGame" class="pull-right">明日比赛</a>
@@ -103,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-sm-5 col-xs-12">
                         <div class="panel panel-default match">
                             <div class="panel-heading">
                                 <h3 class="panel-title"></h3>
@@ -121,20 +144,22 @@
         <div class="dude-box2" id="ins">
             <div class="container-fluid">
                 <div class="row ins-live-box">
-                      <p class="text-center"><img src="./static/img/loading.jpg" alt="兄弟直播"><br>加载中。。。。</p>
+                    <p class="text-center"><img src="./static/img/loading.jpg" alt="兄弟直播">
+                        <br>加载中。。。。</p>
                 </div>
             </div>
         </div>
-        <div class="dude-box3" id="twitter">
+        <!--         <div class="dude-box3" id="twitter">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">球员TWITTER动态 <small style="margin-left:14px;">(纯手工搬运 - -！，每天不定时更新)</small></h3>
                 </div>
                 <ul class="panel-body  twitter-live-box list-group">
-                      <p class="text-center"><img src="./static/img/loading.jpg" alt="兄弟直播"><br>加载中。。。。</p>
+                    <p class="text-center"><img src="./static/img/loading.jpg" alt="兄弟直播">
+                        <br>加载中。。。。</p>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
     <footer>
         <a href="public/about.html">免责声明</a>
@@ -145,12 +170,21 @@
             <li class="list-group-item"><a href="#top">回到顶层</a></li>
             <li class="list-group-item"><a href="#today">今日比赛</a></li>
             <li class="list-group-item"><a href="#ins">球员INS</a></li>
-            <li class="list-group-item"><a href="#twitter">球员TWITTER</a></li>
+            <li class="list-group-item"><a href="public/twitter.html">球员TWITTER</a></li>
             <li class="list-group-item">
                 <a href="http://webscan.360.cn/index/checkwebsite/url/www.zhibodude.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/bb381f620d1c651f466d5f919fad503c/?size=74x27" /></a>
             </li>
         </ul>
     </div>
+    <!-- 模态框 -->
+    <div class="modal fade lklq" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <img src="./static/img/qr-lklq.jpg" alt="兄弟直播" width="100%">
+            </div>
+        </div>
+    </div>
+    <!-- 模态框end -->
     <script src="http://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://cdn.bootcss.com/masonry/3.3.2/masonry.pkgd.min.js"></script>

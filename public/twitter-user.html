@@ -9,6 +9,7 @@
     <meta name="description" content="力求免费提供每一场nba比赛的画面，高清，清爽，无广告。赛后技术统计，比赛精彩回放，球星ins，推特，全部给你收集好。免去你自己再一个一个找的麻烦，让你一次看个爽。">
     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="../css/widget.css">
     <title>兄弟直播-喜欢NBA兄弟的集合地</title>
 </head>
 
@@ -19,24 +20,23 @@
         </header>
         <div class="container">
             <div class="row">
-                <div class="input-group input-group tellme">
-                    <span class="input-group-addon">还想看到谁？</span>
-                    <input type="text" class="form-control" placeholder="球星、球队、花边">
-                    <span class="input-group-btn">
-                <button class="btn btn-default" type="button">告诉我</button>
-                 </span>
+                <div class="dude-box3" id="twitter">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">球员TWITTER动态 <small style="margin-left:14px;">(纯手工搬运 - -！，每天不定时更新)</small></h3>
+                        </div>
+                        <ul class="panel-body  twitter-live-box list-group">
+                            <p class="text-center"><img src="../static/img/loading.jpg" alt="兄弟直播">
+                                <br>加载中。。。。</p>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="row" id="twitter-userBox">
-                <p class="text-center"><img src="../static/img/loading.jpg" alt="兄弟直播">
-                    <br>加载中。。。。</p>
             </div>
         </div>
     </div>
     <script src="http://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
     <!--     <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-    <script src="../js/twitter.js"></script>
-    <script src="../js/wilddog.js"></script>
+    <script src="../js/twitter-user.js"></script>
 </body>
 
 </html>
