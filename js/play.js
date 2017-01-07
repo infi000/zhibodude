@@ -80,7 +80,13 @@ index.callback_line = function(msg) {
                 var _url = _index.url;
                 var _type = _index.type;
                 if (_type == "iframe") {
-                    obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '</a></li>';
+                    if (_name == "CCTV5") {
+                         index.playChannels[_name] ="http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8";
+                        obj += '<li class="list-group-item"><a class="btn btn-default play-nomarl" dataUrl="" >' + _name + '</a></li>';
+                    }else{
+
+                      obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '</a></li>';  
+                    }
                 } else {
                     index.playChannels[_name] = _url;
                     obj += '<li class="list-group-item"><a class="btn btn-default play-nomarl" dataUrl="' + _url + '" >' + _name + '</a></li>';
@@ -98,7 +104,7 @@ index.callback_wenzi = function(msg) {
 
         if (index.title == title) {
             var wenziUrl = index.url;
-            var obj='<iframe src="'+wenziUrl+'" frameborder="0" width="100%" height="500px"></iframe>'
+            var obj = '<iframe src="' + wenziUrl + '" frameborder="0" width="100%" height="500px"></iframe>'
             $(".wzlive").html(obj);
             return
         }
@@ -123,7 +129,7 @@ $(document).ready(function() {
         $(this).addClass('active');
         var name = $(this).html();
         for (var key in index.playChannels) {
-            if (name = key) {
+            if (name == key) {
                 var liveURL = index.playChannels[key];
                 $("#a1Box").html("<div id='a1'></div>");
                 var flashvars = {
