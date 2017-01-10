@@ -2,7 +2,7 @@
 * @Author: 张驰阳
 * @Date:   2016-11-30 17:52:28
 * @Last Modified by:   张驰阳
-* @Last Modified time: 2017-01-09 17:20:50
+* @Last Modified time: 2017-01-10 15:24:55
 */
 
 * {
@@ -219,5 +219,10 @@ body {
     text-align: center;
     padding: 12px 0px;
 
+}
+.voiceTime .glyphicon{ 
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
 }
 /*voiceend*/
