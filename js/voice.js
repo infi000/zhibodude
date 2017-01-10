@@ -15,13 +15,11 @@ function reTime(t) {
     result = parseInt(result);
     return result;
 }
-
-jQuery(document).ready(function($) {
-    //加载新闻
+var getVoice = function() {
     $.ajax({
         url: 'http://127.0.0.1:3000/hupu/1',
         success: function(msg) {
-        
+
             var obj = "";
             $(msg).find("channel item").map(function(index, elem) {
                 var title = $(elem).find("title").html();
@@ -39,7 +37,7 @@ jQuery(document).ready(function($) {
                 obj += '<div class="voiceTitle">' + title + '</div><div class="voicePic"><img src="' + voicePic + '" width="100%"></div>';
                 obj += '<div class="voiceView"><p>' + info + '</p></div>';
                 obj += '<div class="voiceTime"><span class="glyphicon glyphicon-time"></span><span>' + date + '小时前</span></div> </div>';
-                voice[index]=des;
+                voice[index] = des;
                 return obj;
             });
             $("#voiceContainer").html(obj);
@@ -53,10 +51,14 @@ jQuery(document).ready(function($) {
             });
         }
     });
-    
-    $("#voiceContainer").on("click",".voiceBox",function(){
-        var num=$(this).attr("data-num");
-        var title=$(this).find(".voiceTitle").html();
+}
+jQuery(document).ready(function($) {
+    //加载新闻
+    getVoice();
+
+    $("#voiceContainer").on("click", ".voiceBox", function() {
+        var num = $(this).attr("data-num");
+        var title = $(this).find(".voiceTitle").html();
         $(".modal-body").html(voice[num]);
         $("#myModalLabel").html(title);
     })
