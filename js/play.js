@@ -21,7 +21,7 @@ index.callback_play = function(msg) {
             }
             $("#a1Box").html("<div id='a1'></div>");
             index.playChannels['默认'] = liveURL;
-            var obj = '<li class="list-group-item"><a class="btn btn-default active play-nomarl" dataUrl="' + liveURL + '" >默认</a></li>';;
+            var obj = '<li class="list-group-item"><a class="btn btn-default active play-nomarl" dataUrl="' + liveURL + '" >手机线路</a></li>';;
             $(".chooseLine").find("ul").append(obj);
             var flashvars = {
                 f: '../lib/m3u8/m3u8.swf',
