@@ -2,7 +2,7 @@
  * @Author: 张驰阳
  * @Date:   2017-01-09 17:34:07
  * @Last Modified by:   张驰阳
- * @Last Modified time: 2017-01-11 11:38:32
+ * @Last Modified time: 2017-01-11 17:30:01
  */
 
 'use strict';
@@ -17,7 +17,8 @@ function reTime(t) {
 }
 var getVoice = function() {
     $.ajax({
-        url: 'http://zhibodude.com:3000/hupu/1',
+        url: 'http://zhibodude.com:3000/getjson/hupu',
+        type:"POST",
         success: function(msg) {
 
             var obj = "";
