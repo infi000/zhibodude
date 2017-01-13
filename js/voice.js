@@ -2,7 +2,7 @@
  * @Author: 张驰阳
  * @Date:   2017-01-09 17:34:07
  * @Last Modified by:   张驰阳
- * @Last Modified time: 2017-01-11 17:30:01
+ * @Last Modified time: 2017-01-13 09:50:05
  */
 
 'use strict';
@@ -30,7 +30,9 @@ var getVoice = function() {
                 o.html(des);
                 var voicePic = o.find("img").attr("src");
                 var info = o.find("p").eq(0).html();
-                info = info.substr(0, 45) + "...";
+                if(info!=undefined&&info.length>45){
+                  info = info.substr(0, 45) + "...";  
+                };
                 var date = $(elem).find("pubDate").html();
                 date = reTime(date);
                 obj += '<div class="voiceBox" type="button"  data-toggle="modal" data-target=".voiceArt" data-num="' + index + '">';
