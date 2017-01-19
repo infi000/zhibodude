@@ -10,12 +10,13 @@ var today = function() {
 };
 index.playChannels = {};
 index.callback_play = function(msg) {
+    msg=msg.data;
     for (key in msg.today) {
         var data = msg.today[key];
         // console.log(data);
         if (title == data.title) {
             liveURL = "";
-            if (data.url !== undefined) {
+            if (data.url !== undefined&&data.url.length!=0) {
                 liveURL = data.url[0];
                 liveURL = liveURL.replace(" ", "");
             }
@@ -81,11 +82,11 @@ index.callback_line = function(msg) {
                 var _type = _index.type;
                 if (_type == "iframe") {
                     if (_name == "CCTV5") {
-                         index.playChannels[_name] ="http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8";
+                        index.playChannels[_name] = "http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8";
                         obj += '<li class="list-group-item"><a class="btn btn-default play-nomarl" dataUrl="" >' + _name + '</a></li>';
-                    }else{
+                    } else {
 
-                      obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '</a></li>';  
+                        obj += '<li class="list-group-item"><a class="btn btn-default play-iframe" dataUrl="' + _url + '" >' + _name + '</a></li>';
                     }
                 } else {
                     index.playChannels[_name] = _url;
@@ -112,7 +113,12 @@ index.callback_wenzi = function(msg) {
 }
 
 // live
-index.invoke_data(index.url_live, index.data, index.callback_play);
+$.ajax({
+    url: 'http://127.0.0.1:3000/getjson/gamefile',
+    type: 'POST',
+    dataType: "json",
+    success: index.callback_play
+});
 // 加载线路
 // index.invoke_data(index.url_line, index.data, index.callback_line);
 $.ajax({

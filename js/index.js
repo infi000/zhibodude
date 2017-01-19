@@ -37,6 +37,7 @@ $(document).ready(function() {
         }
     };
     index.callback_live = function(msg) {
+        msg=msg.data;
         index.liveData = msg;
         var obj_today = "<ul id='todayGame'>";
         var obj_tom = "<ul id='tomGame' style='display:none'>";
@@ -148,7 +149,12 @@ $(document).ready(function() {
         // 球队对阵
     index.invoke_data(index.url_data, index.data, index.callback_data);
     // live
-    index.invoke_data(index.url_live, index.data, index.callback_live);
+    $.ajax({
+        url: 'http://127.0.0.1:3000/getjson/gamefile',
+        type: 'POST',
+        dataType:"json",
+        success:index.callback_live
+    });
     //名人名言
     $.ajax({
         url: 'https://infi000.wilddogio.com/zhibodude.json?orderBy="weight"&limitToLast=1',
