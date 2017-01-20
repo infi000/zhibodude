@@ -114,7 +114,7 @@ index.callback_wenzi = function(msg) {
 
 // live
 $.ajax({
-    url: 'http://127.0.0.1:3000/getjson/gamefile',
+    url: 'http://www.zhibodude.com:3000/getjson/gamefile',
     type: 'POST',
     dataType: "json",
     success: index.callback_play
