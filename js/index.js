@@ -37,7 +37,7 @@ $(document).ready(function() {
         }
     };
     index.callback_live = function(msg) {
-        msg=msg.data;
+        msg = msg.data;
         index.liveData = msg;
         var obj_today = "<ul id='todayGame'>";
         var obj_tom = "<ul id='tomGame' style='display:none'>";
@@ -83,6 +83,34 @@ $(document).ready(function() {
         obj_today += "</ul>";
         obj_tom += "</ul>";
         $(".match-live-box").html(obj_today + obj_tom);
+    };
+    index.callback_live2 = function(msg) {
+        msg = msg.raw;
+        index.liveData = msg;
+        var obj_today = "<ul id='todayGame'>";
+        for (key in msg) {
+            var type = msg[key].title
+            if (type.indexOf("NBA") != -1) {
+                var data = msg[key];
+                var player1logo = data.left_badge;
+                var player2logo = data.right_badge;
+                var player1 = data.left_name;
+                var player2 = data.right_name;
+                var url = (data.url == undefined) ? "" : data.url[0];
+                var title = encodeURIComponent(data.title);
+                var time = data.startTime;
+                time=time.split(" ")[1];
+                obj_today += '<li class="match-live"><dl><dt>';
+                obj_today += '<img class="logox78 animated fadeInLeft" src="' + player1logo + '" alt="jrs直播"></dt>';
+                obj_today += '<dd class="text-center">' + player1 + '</dd></dl>';
+                obj_today += '<dl><dt><a class="match-live-page" href="public/play.html?&=' + title + '">观看</a></dt>'
+                obj_today += '<dd><span class="match-live-time">' + time + '</span></dd></dl>';
+                obj_today += '<dl><dt><img class="logox78 animated fadeInLeft" src="' + player2logo + '"</dt>';
+                obj_today += '<dd class="text-center">' + player2 + '</dd></dl></li>';
+            }
+        }
+        obj_today += "</ul>";
+        $(".match-live-box").html(obj_today);
     };
     index.callback_slogan = function(data) {
         var msg;
@@ -150,10 +178,11 @@ $(document).ready(function() {
     index.invoke_data(index.url_data, index.data, index.callback_data);
     // live
     $.ajax({
-        url: 'http://www.zhibodude.com:3000/getjson/gamefile',
+        // url: 'http://www.zhibodude.com:3000/getjson/gamefile',
+        url: 'http://www.zhibodude.com:3000/getjson/espn',
         type: 'POST',
-        dataType:"json",
-        success:index.callback_live
+        dataType: "json",
+        success: index.callback_live2
     });
     //名人名言
     $.ajax({

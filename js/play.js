@@ -10,9 +10,9 @@ var today = function() {
 };
 index.playChannels = {};
 index.callback_play = function(msg) {
-    msg=msg.data;
-    for (key in msg.today) {
-        var data = msg.today[key];
+    msg=msg.raw;
+    for (key in msg) {
+        var data = msg[key];
         // console.log(data);
         if (title == data.title) {
             liveURL = "";
@@ -114,7 +114,7 @@ index.callback_wenzi = function(msg) {
 
 // live
 $.ajax({
-    url: 'http://www.zhibodude.com:3000/getjson/gamefile',
+    url: 'http://www.zhibodude.com:3000/getjson/espn',
     type: 'POST',
     dataType: "json",
     success: index.callback_play
