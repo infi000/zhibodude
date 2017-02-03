@@ -17,11 +17,11 @@ index.callback_play = function(msg) {
         if (title == data.title) {
             liveURL = "";
             if (data.url !== undefined&&data.url.length!=0) {
-                liveURL = data.url[0];
-                liveURL = liveURL.replace(" ", "");
+                liveURL = data.url;
+                // liveURL = liveURL.replace(" ", "");
             }
             $("#a1Box").html("<div id='a1'></div>");
-            index.playChannels['默认'] = liveURL;
+            index.playChannels['手机线路'] = liveURL;
             var obj = '<li class="list-group-item"><a class="btn btn-default active play-nomarl" dataUrl="' + liveURL + '" >手机线路</a></li>';;
             $(".chooseLine").find("ul").append(obj);
             var flashvars = {
