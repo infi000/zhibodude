@@ -199,7 +199,7 @@ $(document).ready(function() {
         var title = $(this).attr("dataType");
         var channels = {
             "CCTV—5_1": "http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8",
-            "CCTV—5": "http%3A%2F%2Fcctv5.vtime.cntv.wscdns.com%2Flive%2Fcctv5hls_%2Findex.m3u8%3Fptype%3D1%26AUTH%3DBNXXW0Z14SaB0bFHIGW4VNbhyplk5mI0RHrJvbLQqvv98tinOF7EagKEJsbzR%2FG9LqO5AD%2B7G5qUQsd9zRfsSg%3D%3D&c=0&p=1&s=4&v=100&lv=1&loaded=loadedHandler",
+            "CCTV—5": "http%3A%2F%2Fcctv5.vtime.cntv.wscdns.com%2Flive%2Fcctv5hls_%2Findex.m3u8%3Fptype%3D1%26AUTH%3D%2BW4iHNI9Fhb3aSyQzynIs29VsDoKsM5uj6eLvK1FLHZ%2F%2BwObxa5LWWcpSwN7w4gVpSlpX2IfalQiGPvX8Bd2cg%3D%3D&c=0&p=1&s=4&v=100&lv=1&loaded=loadedHandler",
             "CCTV—5_2": "http://111.39.226.103:8112/120000001001/wlds:8080/ysten-business/live/cctv-5/.m3u8&s=4&c=1",
             "五星体育": "http://183.207.255.190/live/program/live/ssty/2300000/mnf.m3u8",
             "广东体育": "http://125.88.92.166:30001/PLTV/88888956/224/3221227703/1.m3u8",
