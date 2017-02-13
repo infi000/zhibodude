@@ -82,7 +82,7 @@ index.callback_line = function(msg) {
                 var _type = _index.type;
                 if (_type == "iframe") {
                     if (_name == "CCTV5") {
-                        index.playChannels[_name] = "http%3A%2F%2Fcctv5.vtime.cntv.cloudcdn.net%2Flive%2Fcctv5hls_%2Findex.m3u8%3Fptype%3D1%26AUTH%3DCpj%2Fw7WeHVyHKqvfLVv%2BwATdpCzEkW8MgpYHzL5IRYKTfTzg45f%2F%2Befx8po4KRrCjgS2t0l%2BIevV2zwzVYfwxw%3D%3D&c=0&p=1&s=4&v=100&lv=1&loaded=loadedHandler";
+                        index.playChannels[_name] = "http://tv.uwp.ac.cn/migu.m3u8?id=lsoz81GnAyrCm*hbl0hwhw";
                         obj += '<li class="list-group-item"><a class="btn btn-default play-nomarl" dataUrl="" >' + _name + '</a></li>';
                     } else {
 
