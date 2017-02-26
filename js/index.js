@@ -198,8 +198,8 @@ $(document).ready(function() {
         // console.log(13);
         var title = $(this).attr("dataType");
         var channels = {
-            "CCTV—5": "http://tv.uwp.ac.cn/migu.m3u8?id=lsoz81GnAyrCm*hbl0hwhw",
-            "CCTV—5_2": "http://tv.uwp.ac.cn/migu.m3u8?id=lsoz81GnAypIHTZx6f7pog",
+            "CCTV—5": "http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8&s=4&c=0&lv=1&p=1",
+            "CCTV—5_2": "http://cctv5.vtime.cntv.dnion.com:8000/live/no/211_/seg0/index.m3u8&s=4&c=0&lv=1&p=1",
             "五星体育": "http://183.207.255.190/live/program/live/ssty/2300000/mnf.m3u8",
             "广东体育": "http://125.88.92.166:30001/PLTV/88888956/224/3221227703/1.m3u8",
             "北京体育": "http://btv6.vtime.cntv.cloudcdn.net:8500/cache/314_/seg0/index.m3u8",
